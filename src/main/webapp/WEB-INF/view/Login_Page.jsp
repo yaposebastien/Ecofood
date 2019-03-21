@@ -13,7 +13,7 @@
         <meta name="description" content="">
         <meta name="Attecoube.net" content="ÉcoFood, Désormais, vous avez la possibilité de faire des économies sur l'achat de vos produits périssables">
         <meta name="generator" content="Jekyll v3.8.5">
-        <title>ÉcoFood::.. Boutique en ligne de produits périssable</title>
+        <title>ÉcoFood::.. Votre boutique en ligne des produits périssable</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
