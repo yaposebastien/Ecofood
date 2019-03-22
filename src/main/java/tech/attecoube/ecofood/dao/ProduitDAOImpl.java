@@ -141,7 +141,7 @@ public class ProduitDAOImpl implements ProduitDAO {
         return produits;
     }
     
-    //Adding decoration to search Produit by Quartier
+    //Adding decoration to search Produit by name, type or by quartier
     @Override
     public List<Produit> searchProduitsByQuartier(String theSearchQuartier) {
         
@@ -149,8 +149,13 @@ public class ProduitDAOImpl implements ProduitDAO {
         Query theQuery = null;
         
         if (theSearchQuartier != null && theSearchQuartier.trim().length() > 0 ) {
-            theQuery = currentSession.createQuery("from Produit where lower(produit_vendeur_quartier) like :theQuartier", Produit.class);
+            theQuery = currentSession.createQuery("from Produit where "
+                    + "lower(produit_vendeur_quartier) like :theQuartier "
+                    + "or lower(produit_nom) like :theProduit "
+                    + "or lower(produit_type) like :theType", Produit.class);
             theQuery.setParameter("theQuartier", "%" + theSearchQuartier.toLowerCase() + "%");
+            theQuery.setParameter("theProduit", "%" + theSearchQuartier.toLowerCase() + "%");
+            theQuery.setParameter("theType", "%" + theSearchQuartier.toLowerCase() + "%");
         }
         
         List<Produit> produits = theQuery.getResultList();
