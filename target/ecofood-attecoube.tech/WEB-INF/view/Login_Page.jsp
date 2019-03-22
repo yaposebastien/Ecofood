@@ -105,7 +105,31 @@
                     </div>
                 </div>
             </div>
-                    
+        
+          <!--  add a search box by Produit Quartier -->
+                  <div>
+                      <form:form action="searchProduit" method="POST">
+                        Recherche produit par quartier: 
+                        <input type="text" name="theSearchName" />
+                
+                        <input type="submit" value="Rechercher" class="btn btn-primary" />
+                        <br>
+                        
+                      </form:form>
+                  </div>  
+
+          <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+        
                     
             <!-- Table to display the liste of Produits  -->
         <div class="row mb-2"  >

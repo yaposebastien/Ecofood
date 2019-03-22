@@ -37,7 +37,7 @@ public class ProduitDAOImpl implements ProduitDAO {
         
         //Creer une requete
         Query<Produit> theQuery = 
-                currentSession.createQuery("from Produit P order by P.produit_date_peremption asc ", Produit.class);
+                currentSession.createQuery("from Produit P order by P.produit_date_peremption asc  ", Produit.class);
         
         //Executer la requete et obtenir les resultats
         List<Produit> produits = theQuery.getResultList();
@@ -106,7 +106,7 @@ public class ProduitDAOImpl implements ProduitDAO {
         if (theSearchName!= null && theSearchName.trim().length() > 0) {
             
             //Le critere de recherche est le nom de la communaute
-            theQuery = currentSession.createQuery("from Produit where lower(nom_produit) like :theName",Produit.class);
+            theQuery = currentSession.createQuery("from Produit where lower(produit_vendeur) like :theName",Produit.class);
             theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%" );
         
         }
@@ -132,8 +132,25 @@ public class ProduitDAOImpl implements ProduitDAO {
         Query theQuery = null;
         
         if (theSearchVendeur != null && theSearchVendeur.trim().length() > 0 ) {
-            theQuery = currentSession.createQuery("from Produit where lower(produit_vendeur) like : theVendeur", Produit.class);
+            theQuery = currentSession.createQuery("from Produit where lower(produit_vendeur) like :theVendeur", Produit.class);
             theQuery.setParameter("theVendeur", "%" + theSearchVendeur.toLowerCase() + "%");
+        }
+        
+        List<Produit> produits = theQuery.getResultList();
+        
+        return produits;
+    }
+    
+    //Adding decoration to search Produit by Quartier
+    @Override
+    public List<Produit> searchProduitsByQuartier(String theSearchQuartier) {
+        
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query theQuery = null;
+        
+        if (theSearchQuartier != null && theSearchQuartier.trim().length() > 0 ) {
+            theQuery = currentSession.createQuery("from Produit where lower(produit_vendeur_quartier) like :theQuartier", Produit.class);
+            theQuery.setParameter("theQuartier", "%" + theSearchQuartier.toLowerCase() + "%");
         }
         
         List<Produit> produits = theQuery.getResultList();

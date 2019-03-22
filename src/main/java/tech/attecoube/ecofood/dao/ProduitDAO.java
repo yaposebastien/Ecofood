@@ -28,5 +28,8 @@ public interface ProduitDAO {
     //Adding decoration to search Produit by Vendeur
     public List<Produit> searchProduitsByVendeur(String theVendeur);
     
+    //Adding decoration to search Produit by Quartier
+    public List<Produit> searchProduitsByQuartier(String theQuartier);
+    
     
 }

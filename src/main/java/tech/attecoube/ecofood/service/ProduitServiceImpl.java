@@ -75,4 +75,12 @@ public class ProduitServiceImpl implements ProduitService {
         return produitDAO.searchProduitsByVendeur(theVendeur);
     }
     
+    
+   //Adding decoration to search Produit by Quartier
+    @Override
+    @Transactional
+    public List<Produit> searchProduitsByQuartier(String theQuartier) {
+        return produitDAO.searchProduitsByQuartier(theQuartier);
+    }
+    
 }

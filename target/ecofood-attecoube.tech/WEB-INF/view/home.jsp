@@ -84,7 +84,17 @@
                 </div>
             </div>
 
-                        
+            
+            <!--  add a search box -->
+                  <div>
+                      <form:form action="search" method="POST">
+                        Recherche produit par vendeur: <input type="text" name="theSearchName" />
+                
+                        <input type="submit" value="Search" class="add-button" />
+                        <br>
+                        <br>
+                      </form:form>
+                  </div>
            
 
             <div class="row mb-2">

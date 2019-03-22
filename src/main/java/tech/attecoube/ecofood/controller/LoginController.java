@@ -9,6 +9,8 @@ import tech.attecoube.ecofood.dao.ProduitDAO;
 import tech.attecoube.ecofood.entity.Produit;
 import tech.attecoube.ecofood.service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
@@ -38,6 +40,21 @@ public class LoginController {
 		
 	}
         
+        
+         //Code pour rechercher les produits d'un vendeur
+        @PostMapping("/searchProduit")
+        public String searchProduitsByQuartier(@RequestParam("theSearchName") 
+                String theSearchName, Model theModel) {
+
+            //Recherche de la communaute dans notre service
+
+            List<Produit> theProduits = produitService.searchProduitsByQuartier(theSearchName);
+
+            //Ajout des communautes dans le modele
+            theModel.addAttribute("produits", theProduits);
+
+            return "Login_Page";
+        }
         
        
 }

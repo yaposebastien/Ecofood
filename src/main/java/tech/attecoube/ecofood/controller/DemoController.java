@@ -43,6 +43,22 @@ public class DemoController {
 		
 		return "admins";
 	}
+
+        //Code pour rechercher les produits d'un vendeur
+        @PostMapping("search")
+        public String searchProduitsByVendeur(@RequestParam("theSearchName") 
+                String theSearchName, Model theModel) {
+
+            //Recherche de la communaute dans notre service
+
+            List<Produit> theProduits = produitService.searchProduitsByVendeur(theSearchName);
+
+            //Ajout des communautes dans le modele
+            theModel.addAttribute("produits", theProduits);
+
+            return "home";
+        
+    }
         
         
         
