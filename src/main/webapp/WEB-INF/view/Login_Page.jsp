@@ -95,6 +95,9 @@
                     </div>
                 </div>
             </header>
+                                
+ 
+            
 
             <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" >
                 <div class="col-md-6 px-0">
@@ -110,14 +113,20 @@
                   <div>
                       <form:form action="searchProduit" method="POST">
                         
-                        <input type="text" name="theSearchName" placeholder="Nom produit, Type ou Quartier."  />
+                        <input type="text" name="theSearchName" placeholder="Nom produit, Type ou Quartier." />
                 
                         <input type="submit" value="Rechercher" class="btn btn-sm btn-outline-secondary" />
                         <br>
-                        <br>
+                        
                         
                       </form:form>
                   </div>  
+          
+          <!--  adding Box for newsletter-->
+          <div>
+              
+          </div>
+                
 
 
         
