@@ -88,11 +88,10 @@
             <!--  add a search box -->
                   <div>
                       <form:form action="search" method="POST">
-                        Recherche produit par vendeur: <input type="text" name="theSearchName" />
-                
-                        <input type="submit" value="Search" class="add-button" />
-                        <br>
-                        <br>
+                          
+                          <input type="submit" value="Charger vos produits" class="add-button" />
+                          <input type="text" name="theSearchName" value="${user.userName}"/>
+
                       </form:form>
                   </div>
            
@@ -130,10 +129,18 @@
                             <td> ${tempProd.produit_vendeur_telephone}</td>
 
                             <td> 
-                               
-                                <a href="${deleteLink}"
+                                <!-- This condition helps only the connected user to delete his own produit. -->
+                                <c:set var = "usernameconnected" scope = "session" value = "${user.userName}"/>
+                                <c:set var = "vendeurproduit" scope = "session" value = "${tempProd.produit_vendeur}"/>
+                                <c:if test = "${usernameconnected == vendeurproduit}">
+                                    
+                                   <a href="${deleteLink}"
                                    onclick="if (!(confirm('Voulez-vous supprimer ce produit ${tempProd.produit_nom} ?')))
-                                           return false" >Supprimer</a>
+                                           return false" >Supprimer</a>  
+                          
+                                </c:if>
+                               
+                               
                             </td>
                         </tr>
                         </c:forEach>
@@ -146,12 +153,23 @@
                     <div class="card" style="width: 18rem;" >
                         <img src="https://cnlvc.ci/wp-content/uploads/2018/06/boutique-paysanne.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <strong class="d-inline-block mb-2 text-success">${user.nom_proprietaire_boutique}</strong>
-                            <h6 class="mb-0">Quartier: ${user.quartier_boutique}</h6>
-                            <div class="mb-1 text-muted">Cel: ${user.telephone_boutique}</div>
+                            <strong class="d-inline-block mb-2 text-success">Votre Fiche boutique</strong>
+                            <br>
+                           
+                            <h7 class="mb-0"><strong>Boutique: </strong>${user.userName}</h7>
+                            <br>
+                            <h7 class="mb-0"><strong>Proprietaire: </strong>${user.nom_proprietaire_boutique}</h7>
+                            <br>
+                            <h7 class="mb-0"><strong>Quartier: </strong>${user.quartier_boutique}</h7>
+                            <br>
+                            <h7 class="mb-0"><strong>Telephone: </strong>${user.telephone_boutique}</h7>
+                            <br>
+                            <h7 class="mb-0"><strong>Email: </strong>${user.email_boutique}</h7>
+                            <br>
+                            
                             <form:form action="${pageContext.request.contextPath}/logout" 
                                            method="POST">
-                                <input class="btn btn-secondary" type="submit" value="Deconnexion" />
+                                <center><input class="btn btn-secondary" type="submit" value="Deconnexion" /></center>
                             </form:form>
                         </div>
                     </div>

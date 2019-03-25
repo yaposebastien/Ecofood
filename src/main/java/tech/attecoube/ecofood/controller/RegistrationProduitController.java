@@ -37,7 +37,7 @@ public class RegistrationProduitController {
         //Obtenir la liste des Customers de notre Service
         List<Produit> theProduits = produitService.getProduits();
         
-        //Ajout de Customers au Model
+        //Ajout de Produits au Model
         theModel.addAttribute("produits", theProduits);
         
         return "list-produits";
@@ -67,7 +67,7 @@ public class RegistrationProduitController {
     //Sauvegarde de notre Communaute
     produitService.saveProduit(theProduit);
     
-        return "registration-produit-form";
+        return "registration-produit-confirmation";
     }
     
     /*

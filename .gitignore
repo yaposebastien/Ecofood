@@ -1,0 +1,3 @@
+persistence-mysql.properties
+target/ecofood-attecoube.tech/WEB-INF/classes/persistence-mysql.properties
+src/main/resources/persistence-mysql.properties
