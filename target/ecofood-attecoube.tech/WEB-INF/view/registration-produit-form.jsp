@@ -118,7 +118,7 @@
                                                             <form:input path="produit_date_peremption"  cssClass="form-control"  
                                                                                 class="form-control datetimepicker-input" data-target="#datetimepicker1" />
                                                             <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                                <div class="input-group-text"><i class="icon fa-twitter"></i></div>
                                                             </div>
                                                             <script type="text/javascript">
                                                               $(function () {

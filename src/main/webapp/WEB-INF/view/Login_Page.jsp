@@ -42,7 +42,7 @@
             }
         </style>
 
-       
+
     </head>
 
     <body>
@@ -54,29 +54,29 @@
                         <a class="blog-header-logo text-dark" href="${pageContext.request.contextPath}/" style="font-size: 15px" >Attecoube.net::.. Tout au sujet de notre commune!</a>
                     </div>
                     <div class="col-4 d-flex justify-content-end align-items-center">
-                       
-                        
+
+
                         <form action="${pageContext.request.contextPath}/authenticateTheUser" 
-                                  method="POST" class="form-horizontal">
+                              method="POST" class="form-horizontal">
                             <div>
-                                            <!-- Check for login error -->
-                                            <c:if test="${param.error != null}">
-                                                <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                                    Votre nom utilisateur ou mot de passe est invalide!
-                                                </div>
-                                            </c:if>
+                                <!-- Check for login error -->
+                                <c:if test="${param.error != null}">
+                                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                        Votre nom utilisateur ou mot de passe est invalide!
+                                    </div>
+                                </c:if>
 
-                                            <!-- Check for logout -->
+                                <!-- Check for logout -->
 
-                                            <c:if test="${param.logout != null}">
+                                <c:if test="${param.logout != null}">
 
-                                                <div class="alert alert-success col-xs-offset-1 col-xs-10">
-                                                    Vous etes maintenant deconnectes.
-                                                </div>
+                                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                        Vous etes maintenant deconnectes.
+                                    </div>
 
-                                            </c:if>
+                                </c:if>
 
-                             </div>
+                            </div>
                             <div class="form-row">
                                 <div class="col">
                                     <input type="text" name="username"  class="form-control" placeholder="Nom utilisateur" width="15px" style="font-size: 14px">
@@ -84,101 +84,140 @@
                                 <div class="col">
                                     <input type="password" name="password"  class="form-control" placeholder="Mot de passe" style="font-size: 14px" width="15px">
                                 </div>
-                               
+
                                 <input type="hidden"
                                        name="${_csrf.parameterName}"
                                        value="${_csrf.token}" />
                                 <button type="submit" class="btn btn-outline-success btn-sm">Connecter</button>
-                               
+
                             </div>
                         </form>
                     </div>
                 </div>
             </header>
-                                
- 
-            
 
-            <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" >
-                <div class="col-md-6 px-0">
-                    <h1 class="display-4 font-italic">ÉcoFood</h1>
-                    <p class="lead my-3">Désormais, vous avez la possibilité  de faire des économies sur l'achat de vos produits périssables.</p>
-                    <div>
-                        <a href="${pageContext.request.contextPath}/boutique/formulaireCreationBoutique" class="btn btn-primary" role="button" aria-pressed="true">Créer gratuitement votre boutique virtuelle maintenant!</a>
+            <!-- Caroussel -->
+            <div class="bd-example" >
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fi.huffpost.com%2Fgen%2F1924836%2Fimages%2Fo-BIOGAS-FOOD-WASTE-facebook.jpg&f=1" class="d-block w-100" alt="..." style="height:300px">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Désormais, vous avez la possibilité  de faire des économies sur l'achat de vos produits périssables.</h5>
+                                <div>
+                                    <a href="${pageContext.request.contextPath}/boutique/formulaireCreationBoutique" class="btn btn-primary" role="button" aria-pressed="true">Créer gratuitement votre boutique virtuelle maintenant!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia4.s-nbcnews.com%2Fj%2Fnewscms%2F2017_49%2F2250466%2F171205-food-waste-compost-ac-421p_77851c253c01aa3afddce30c1f631583.1200%3B630%3B7%3B70%3B5.jpg&f=1" class="d-block w-100" alt="..." style="height:300px">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fi.huffpost.com%2Fgen%2F1924836%2Fimages%2Fo-BIOGAS-FOOD-WASTE-facebook.jpg&f=1" class="d-block w-100" alt="..." style="height:300px">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </div>
+                        </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-        
-          <!--  add a search box by Produit Quartier -->
-                  <div>
-                      <form:form action="searchProduit" method="POST">
-                        
-                        <input type="text" name="theSearchName" placeholder="Nom produit, Type ou Quartier." />
-                
-                        <input type="submit" value="Rechercher" class="btn btn-sm btn-outline-secondary" />
-                        <br>
-                        
-                        
-                      </form:form>
-                  </div>  
-          
-          <!--  adding Box for newsletter-->
-          <div>
-              
-          </div>
-                
+            <!-- End Carousel -->
 
 
-        
-                    
-            <!-- Table to display the liste of Produits  -->
-        <div class="row mb-2"  >
-            <table class="table table-hover">
-                <tr>
-                    <th>Produit</th>
-                    <th>Type</th>
-                    <th>Quantite</th>
-                    <th>Date Peremption</th>
-                    <th>Vendeur</th>
-                    <th>Contact</th>
-                    <th>Quartier</th>
-                    <th>Action</th>
-                    
-                    
-                </tr>
-                <!-- Boucle pour afficher Produits -->
-                <!-- Code pour afficher un Produit a modifier -->
-                <c:forEach var="tempProd" items="${produits}">
-
-                    <!-- Debut du code du formulaire de mise a jour -->
-                    <c:url var="updateLink" value="/produit/showFormForUpdate">
-                        <c:param name="produitId" value="${tempProd.id}" />
-                    </c:url>
-
-                    <!-- Debut du code du formulaire pour la suppression -->
-                    <c:url var="deleteLink" value="/produit/delete">
-                        <c:param name="produitId" value="${tempProd.id}" />
-                    </c:url>
-                    <tr>
-                        <td> ${tempProd.produit_nom}</td>
-                        <td> ${tempProd.produit_type}</td>
-                        <td> ${tempProd.produit_quantite}</td>
-                        <td id="date_peremption"> ${tempProd.produit_date_peremption}</td>
-                        <td> ${tempProd.produit_vendeur}</td>
-                        <td> ${tempProd.produit_vendeur_telephone}</td>
-                        <td> ${tempProd.produit_vendeur_quartier}</td>
-                        <td> 
-                            <a class="btn btn-sm btn-outline-secondary" href="#">Commander</a> 
-                        </td>
-                        
-
-                       
-                    </tr>
-
-                </c:forEach>
-            </table>
-        </div>               
             
+            <!--  add a search box by Produit Quartier -->
+            <div>
+                <form:form action="searchProduit" method="POST">
+
+                    <input type="text" name="theSearchName" placeholder="Nom produit, Type ou Quartier." />
+
+                    <input type="submit" value="Rechercher" class="btn btn-sm btn-outline-secondary" />
+                    <br>
+
+
+                </form:form>
+            </div>  
+
+            <!--  adding Box for newsletter-->
+            <div>
+
+            </div>
+
+
+
+
+
+            <!-- Table to display the liste of Produits  -->
+            <div class="row mb-2"  >
+                <table class="table table-hover">
+                    <tr>
+                        <th>Produit</th>
+                        <th>Type</th>
+                        <th>Quantite</th>
+                        <th>Date Peremption</th>
+                        <th>Vendeur</th>
+                        <th>Contact</th>
+                        <th>Quartier</th>
+                        <th>Action</th>
+
+
+                    </tr>
+                    <!-- Boucle pour afficher Produits -->
+                    <!-- Code pour afficher un Produit a modifier -->
+                    <c:forEach var="tempProd" items="${produits}">
+
+                        <!-- Debut du code du formulaire de mise a jour -->
+                        <c:url var="updateLink" value="/produit/showFormForUpdate">
+                            <c:param name="produitId" value="${tempProd.id}" />
+                        </c:url>
+
+                        <!-- Debut du code du formulaire pour la suppression -->
+                        <c:url var="deleteLink" value="/produit/delete">
+                            <c:param name="produitId" value="${tempProd.id}" />
+                        </c:url>
+                        <tr>
+                            <td> ${tempProd.produit_nom}</td>
+                            <td> ${tempProd.produit_type}</td>
+                            <td> ${tempProd.produit_quantite}</td>
+                            <td id="date_peremption"> ${tempProd.produit_date_peremption}</td>
+                            <td> ${tempProd.produit_vendeur}</td>
+                            <td> ${tempProd.produit_vendeur_telephone}</td>
+                            <td> ${tempProd.produit_vendeur_quartier}</td>
+                            <td> 
+                                <a class="btn btn-sm btn-outline-secondary" href="#">Commander</a> 
+                            </td>
+
+
+
+                        </tr>
+
+                    </c:forEach>
+                </table>
+
+
+
+            </div>    
+
+
+
 
     </body>
 </html>

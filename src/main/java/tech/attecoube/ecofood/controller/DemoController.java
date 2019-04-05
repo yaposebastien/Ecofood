@@ -21,6 +21,8 @@ public class DemoController {
     //Injection de notre Service pour le Produit
        @Autowired
        private ProduitService produitService;
+       
+      
 
 	@GetMapping("/")
 	public String showHome(Model theModel) {
